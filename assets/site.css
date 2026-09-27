@@ -1,5 +1,6 @@
 
-/* Black and white only (group decision): no colour, no background highlights. Emphasis = bold, borders, underline. */
+/* Black-and-white layout (group decision). Colour is ONLY used for status/rating pills (Green/Amber/Red, risk bands),
+   where it helps you read the meaning; the word is always there too. */
 :root{--ink:#000;--muted:#333;--line:#000}
 *{box-sizing:border-box}html{scroll-behavior:smooth}section,figure{scroll-margin-top:130px}
 body{margin:0;font:16px/1.6 "Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff}
@@ -33,7 +34,13 @@ figcaption{font-size:14px;margin-top:8px}code{font-size:13px}
 .connect,.decision{padding:12px 16px;margin:22px 0}
 .connect{border:1px solid #000}.connect h3,.decision h3{margin-top:0}
 .decision{border:3px double #000}
-.rag{display:inline-block;padding:0 6px;border:1px solid #000;font-size:13px;font-weight:700}
+.rag{display:inline-block;padding:0 7px;border:1px solid #000;border-radius:999px;font-size:13px;font-weight:700;color:#111;white-space:nowrap}
+.rag-green{background:#b7ebc6}.rag-amber{background:#ffd98a}.rag-red{background:#ffb4b4}.rag-orange{background:#ffc98a}
+.rag-yellow{background:#fff2a8}.rag-grey{background:#e3e6ea}
+.onpage{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;border:1px solid #000;padding:8px 12px;margin:6px 0 18px;font-size:14px}
+.pager{display:flex;justify-content:space-between;gap:12px;border-top:2px solid #000;margin-top:34px;padding-top:12px;font-weight:700}
+.figs{display:grid;grid-template-columns:1fr 1fr;gap:14px}.figs figure{margin:0}
+table.sitemap td:first-child{white-space:nowrap}
 .raci{display:inline-block;min-width:22px;text-align:center}.raci-a{font-weight:700;text-decoration:underline}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .lifecycle{list-style:none;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
@@ -48,4 +55,4 @@ summary{cursor:pointer;font-weight:700}
 footer{border-top:1px solid #000;font-size:14px;text-align:center;padding:20px}
 #lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
 #lb.open{display:flex}#lb img{max-width:100%;max-height:100%;background:#fff}#lb button{position:absolute;top:12px;right:16px;font-size:28px;background:none;color:#fff;border:0;cursor:pointer}
-@media (max-width:760px){header.top{position:static}.cols{grid-template-columns:1fr}.lifecycle{grid-template-columns:1fr 1fr}h1{font-size:1.6rem}main{padding:16px}nav a{font-size:13px;padding:4px 7px}}
+@media (max-width:760px){header.top{position:static}.cols,.figs{grid-template-columns:1fr}.lifecycle{grid-template-columns:1fr 1fr}h1{font-size:1.6rem}main{padding:16px}nav a{font-size:13px;padding:4px 7px}}
